@@ -1,5 +1,6 @@
 import Head from 'next/head';
 import Image from 'next/image';
+import Link from 'next/link';
 import { useSessionView } from '../api-functions/signIn';
 import phoneImage from '/public/phone.png';
 
@@ -20,9 +21,11 @@ export default function Home() {
 							This is a web application for messaging people all around the world.
 						</div>
 						<div className='mt-10 mx-auto'>
-							<button className='antialiased bg-indigo-600 transition transform hover:bg-indigo-700 text-white font-bold py-2 px-4 rounded-lg focus:outline-none focus:ring-4 focus:scale-95'>
-								Send a Message
-							</button>
+							<Link href='/DirectMessages'>
+								<a className='antialiased bg-indigo-600 transition transform hover:bg-indigo-700 text-white font-bold py-2 px-4 rounded-lg focus:outline-none focus:ring-4 focus:scale-95'>
+									Send a Message
+								</a>
+							</Link>
 						</div>
 					</div>
 					<div className='relative ml-10 w-72 h-96'>
