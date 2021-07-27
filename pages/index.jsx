@@ -1,6 +1,6 @@
 import Head from 'next/head';
 import Image from 'next/image';
-import { useSessionView } from '../api/signIn';
+import { useSessionView } from '../api-functions/signIn';
 import phoneImage from '/public/phone.png';
 
 export default function Home() {

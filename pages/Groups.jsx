@@ -1,4 +1,4 @@
-import { setProtectedView } from '../api/signIn';
+import { setProtectedView } from '../api-functions/signIn';
 
 const Groups = ({ ...props }) => {
 	return <div {...props}>Groups</div>;
