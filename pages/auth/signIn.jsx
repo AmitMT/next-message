@@ -47,7 +47,7 @@ SignIn.getInitialProps = async (context) => {
 	const session = await getSession({ req });
 
 	if (session && res && session.accessToken) {
-		res.writeHead(302, { Location: query.callbackUrl });
+		res.writeHead(302, { Location: query.callbackUrl || '/' });
 		res.end();
 		return {};
 	}

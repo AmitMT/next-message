@@ -1,16 +1,21 @@
 import { getSession } from 'next-auth/client';
 
-export const setProtectedView = (component) =>
-	(component.getInitialProps = async ({ req, res, asPath }) => {
-		const session = await getSession({ req });
+export const setProtectedView = async ({ req, res, resolvedUrl }) => {
+	const session = await getSession({ req });
+	if (!session && res) {
+		res.statusCode = 302;
+		res.setHeader('Location', `/auth/signIn?callbackUrl=${resolvedUrl}`);
+		return { props: { session: null } };
+	}
 
-		if (!session && res) {
-			res.writeHead(302, { Location: `/auth/signIn?callbackUrl=${asPath}` });
-			res.end();
-			return;
-		}
+	return { props: { session: session } };
+};
 
-		return {
-			session: session,
-		};
-	});
+export const useSessionView = async ({ req, res, resolvedUrl }) => {
+	const session = await getSession({ req });
+	if (!session && res) {
+		return { props: { session: null } };
+	}
+
+	return { props: { session: session } };
+};
