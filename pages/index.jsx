@@ -18,7 +18,7 @@ export default function Home() {
 							<span className='font-light'>Welcome to</span> Next Message
 						</div>
 						<div className='text-xl mt-8'>
-							This is a web application for messaging people all around the world.
+							A web application made with <b>next.js</b> for messaging people all around the world.
 						</div>
 						<div className='mt-10 mx-auto'>
 							<Link href='/DirectMessages'>
