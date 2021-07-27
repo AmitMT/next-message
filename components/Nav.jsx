@@ -99,15 +99,25 @@ const Nav = ({ ...props }) => {
 					</div>
 					{/* User Info */}
 					{!session && router.pathname !== '/auth/signIn' && (
-						<span
-							className='pr-1 font-semibold cursor-pointer md:hover:underline md:text-blue-200 md:hover:text-blue-300'
-							onClick={signIn}
-						>
-							Sign In
-						</span>
+						<Link href={`/auth/signIn?callbackUrl=${router.pathname}`}>
+							<a className='pr-1 font-semibold cursor-pointer md:hover:underline md:text-blue-200 md:hover:text-blue-300'>
+								Sign In
+							</a>
+						</Link>
 					)}
 					<Dropdown
-						groups={[['Your profile', 'Settings'], [<div onClick={signOut}>Sign out</div>]]}
+						groups={[
+							[
+								<Link href='Profile'>
+									<a>Your profile</a>
+								</Link>,
+								<Link href='Settings'>
+									<a>Settings</a>
+								</Link>,
+							],
+							[<div onClick={signOut}>Sign out</div>],
+						]}
+						bgClass='bg-gray-700'
 					>
 						<div className='flex items-center ml-auto'>
 							<div className='hidden font-semibold mr-2 sm:block'>

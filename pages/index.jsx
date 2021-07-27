@@ -12,24 +12,29 @@ export default function Home() {
 				<meta name='description' content='Home' />
 			</Head>
 			<div className='flex-1 flex items-center'>
-				<div className='flex items-center mx-auto max-w-3xl max-h-96 '>
+				<div className='flex items-center mx-10 max-w-full lg:mx-auto lg:max-w-3xl '>
 					<div className='flex flex-col'>
-						<div className='text-5xl font-bold mr-40'>
-							<span className='font-light'>Welcome to</span> Next Message
+						<div className='text-5xl font-bold'>
+							<div className='font-light'>Welcome to</div> Next Message
 						</div>
 						<div className='text-xl mt-8'>
 							A web application made with <b>next.js</b> for messaging people all around the world.
 						</div>
-						<div className='mt-10 mx-auto'>
+						<div className='mx-auto'>
 							<Link href='/DirectMessages'>
-								<a className='antialiased bg-indigo-600 transition transform hover:bg-indigo-700 text-white font-bold py-2 px-4 rounded-lg focus:outline-none focus:ring-4 focus:scale-95'>
+								<a className='block bg-indigo-600 border-b-4 border-indigo-900 transition hover:bg-indigo-700 text-white font-semibold mt-10 mb-5 py-2 px-4 rounded-lg focus:outline-none focus:ring-4 focus:border-transparent'>
 									Send a Message
 								</a>
 							</Link>
 						</div>
 					</div>
-					<div className='relative ml-10 w-72 h-96'>
-						<Image src={phoneImage} layout='fill' objectFit='scale-down' className='select-none' />
+					<div className='hidden self-end md:block ml-10'>
+						<Image
+							src={phoneImage}
+							layout='intrinsic'
+							objectFit='scale-down'
+							className='select-none'
+						/>
 					</div>
 				</div>
 			</div>
@@ -38,5 +43,3 @@ export default function Home() {
 }
 
 export const getServerSideProps = useSessionView;
-
-// useSessionView(Home);
