@@ -12,7 +12,7 @@ export default function Home() {
 				<meta name='description' content='Home' />
 			</Head>
 			<div className='flex-1 flex items-center'>
-				<div className='flex items-center mx-10 max-w-full lg:mx-auto lg:max-w-3xl '>
+				<div className='flex items-center max-w-full text-center mx-5 sm:text-left lg:mx-auto lg:max-w-3xl '>
 					<div className='flex flex-col'>
 						<div className='text-5xl font-bold'>
 							<div className='font-light'>Welcome to</div> Next Message
