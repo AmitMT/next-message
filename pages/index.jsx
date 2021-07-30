@@ -38,14 +38,6 @@ export default function Home() {
 							className='select-none'
 						/>
 					</div>
-					<div
-						className={`hi${hi ? ' transition' : ''}`}
-						onClick={() => {
-							setHi(!hi);
-						}}
-					>
-						hi
-					</div>
 				</div>
 			</div>
 		</>

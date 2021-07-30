@@ -9,17 +9,3 @@
 .nav-pages-in {
 	top: 0px;
 }
-
-.hi {
-	color: red;
-	position: absolute;
-	-webkit-transition: all 1s linear;
-	-moz-transition: all 1s linear;
-	-o-transition: all 1s linear;
-	left: 0;
-}
-
-.transition {
-	background: green;
-	left: 50px;
-}
