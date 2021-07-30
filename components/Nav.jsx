@@ -3,10 +3,10 @@ import Link from 'next/link';
 import logo from '/public/logo.svg';
 import abstractUser from '/public/abstract-user.svg';
 import { useRouter } from 'next/router';
-import { signIn, signOut, useSession } from 'next-auth/client';
+import { signOut, useSession } from 'next-auth/client';
 import Dropdown from './Dropdown';
 import NavPages from './NavPages';
-import { Fragment, useState } from 'react';
+import { useState } from 'react';
 
 const Nav = ({ ...props }) => {
 	const router = useRouter();
@@ -23,9 +23,7 @@ const Nav = ({ ...props }) => {
 						<div className='flex items-center sm:hidden'>
 							<button
 								type='button'
-								className='inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white'
-								aria-controls='mobile-menu'
-								aria-expanded='false'
+								className='inline-flex items-center justify-center p-2 rounded-md text-gray-400 sm:hover:text-white hover:bg-gray-700 focus:outline-none'
 								onClick={() => setIsShowing(!isShowing)}
 							>
 								<svg
@@ -107,7 +105,12 @@ const Nav = ({ ...props }) => {
 								{session?.user?.image ? (
 									<img className='w-9 h-9 rounded-full' src={session?.user?.image} />
 								) : (
-									<Image className='rounded-full' width={36} height={36} src={abstractUser} />
+									<Image
+										className='rounded-full focus:outline-none'
+										width={36}
+										height={36}
+										src={abstractUser}
+									/>
 								)}
 							</div>
 						</Dropdown>

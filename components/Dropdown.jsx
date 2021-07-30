@@ -1,5 +1,5 @@
 import { Menu, Transition } from '@headlessui/react';
-import { Fragment, useEffect, useRef, useState } from 'react';
+import { Fragment } from 'react';
 
 const Dropdown = ({
 	groups,
@@ -12,7 +12,7 @@ const Dropdown = ({
 
 	return (
 		<Menu as='div' className='relative inline-block'>
-			<Menu.Button>{children}</Menu.Button>
+			<Menu.Button style={{ WebkitTapHighlightColor: 'transparent' }}>{children}</Menu.Button>
 			<Transition
 				as={Fragment}
 				enter='transition ease-out duration-100'
