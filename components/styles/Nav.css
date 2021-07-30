@@ -2,6 +2,14 @@
 	transition: top 0.4s ease-in-out !important;
 }
 
+.nav-pages-out {
+	top: 64px;
+}
+
+.nav-pages-in {
+	top: 0px;
+}
+
 .hi {
 	color: red;
 	position: absolute;

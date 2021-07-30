@@ -39,7 +39,7 @@ export default function Home() {
 						/>
 					</div>
 					<div
-						class={`hi${hi ? ' transition' : ''}`}
+						className={`hi${hi ? ' transition' : ''}`}
 						onClick={() => {
 							setHi(!hi);
 						}}

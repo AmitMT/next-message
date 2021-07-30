@@ -115,8 +115,8 @@ const Nav = ({ ...props }) => {
 				</div>
 			</nav>
 			<div
-				className={`fixed w-full flex items-center justify-center h-16 top-${
-					isShowing ? '16' : '0'
+				className={`fixed w-full flex items-center justify-center h-16 ${
+					isShowing ? 'nav-pages-out' : 'nav-pages-in'
 				} left-0 bg-gray-800 rounded-b shadow sm:hidden nav-pages-transition`}
 			>
 				<div>
