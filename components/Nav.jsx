@@ -6,16 +6,18 @@ import Router, { useRouter } from 'next/router';
 import { signOut, useSession } from 'next-auth/client';
 import Dropdown from './Dropdown';
 import NavPages from './NavPages';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 const Nav = ({ ...props }) => {
 	const router = useRouter();
 	const [isShowing, setIsShowing] = useState(false);
 	const [session] = useSession();
 
-	Router.events.on('routeChangeComplete', () => {
-		setIsShowing(false);
-	});
+	useEffect(() => {
+		Router.events.on('routeChangeComplete', () => {
+			setIsShowing(false);
+		});
+	}, []);
 
 	return (
 		<header>
