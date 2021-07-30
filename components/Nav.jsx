@@ -15,7 +15,7 @@ const Nav = ({ ...props }) => {
 
 	return (
 		<header>
-			<nav className='sticky shadow-md top-0 z-50 bg-gray-800 text-white' {...props}>
+			<nav className='sticky shadow-lg top-0 z-50 bg-gray-800 text-white' {...props}>
 				{/* Navbar width */}
 				<div className='max-w-7xl mx-auto px-2 sm:px-6 lg:px-8'>
 					<div className='relative flex items-center justify-between h-16'>
@@ -117,7 +117,7 @@ const Nav = ({ ...props }) => {
 			<div
 				className={`fixed w-full flex items-center justify-center h-16 top-${
 					isShowing ? '16' : '0'
-				} left-0 bg-gray-800 rounded-b shadow sm:hidden nav-pages-transition`}
+				} left-0 bg-gray-800 rounded-b-md shadow sm:hidden nav-pages-transition`}
 			>
 				<div>
 					<NavPages />
