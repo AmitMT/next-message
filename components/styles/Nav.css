@@ -1,3 +1,17 @@
 .nav-pages-transition {
-	transition: top .4s ease-in-out !important;
+	transition: top 0.4s ease-in-out !important;
+}
+
+.hi {
+	color: red;
+	position: absolute;
+	-webkit-transition: all 1s linear;
+	-moz-transition: all 1s linear;
+	-o-transition: all 1s linear;
+	left: 0;
+}
+
+.transition {
+	background: green;
+	left: 50px;
 }

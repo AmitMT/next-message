@@ -1,10 +1,12 @@
 import Head from 'next/head';
 import Image from 'next/image';
 import Link from 'next/link';
+import { useState } from 'react';
 import { useSessionView } from '../api-functions/signIn';
 import phoneImage from '/public/phone.png';
 
 export default function Home() {
+	const [hi, setHi] = useState(false);
 	return (
 		<>
 			<Head>
@@ -35,6 +37,14 @@ export default function Home() {
 							objectFit='scale-down'
 							className='select-none'
 						/>
+					</div>
+					<div
+						class={`hi${hi ? ' transition' : ''}`}
+						onClick={() => {
+							setHi(!hi);
+						}}
+					>
+						hi
 					</div>
 				</div>
 			</div>
