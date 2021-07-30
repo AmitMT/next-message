@@ -7,18 +7,13 @@ import { useState } from 'react';
 import ReactLoading from 'react-loading';
 
 const providersUI = {
-	google: { logo: googleIcon, bg: 'bg-red-600' },
-	github: { logo: githubIcon, bg: 'bg-blue-600' },
-	discord: { logo: discordIcon, bg: 'bg-purple-600' },
+	google: { logo: googleIcon },
+	github: { logo: githubIcon },
+	discord: { logo: discordIcon },
 };
 
 const SignIn = ({ authProviders }) => {
 	const [loading, setLoading] = useState('');
-
-	const hoverBgClass = (className, inc = 1) =>
-		className.substring(0, className.length - 3) +
-		(parseInt(className[className.length - 3]) + inc) +
-		className.substring(className.length - 2);
 
 	return (
 		<div className='flex flex-col items-center justify-center min-h-screen bg-purple-100'>
@@ -27,17 +22,10 @@ const SignIn = ({ authProviders }) => {
 				{Object.values(authProviders).map((provider) => (
 					<div key={provider.name}>
 						<button
-							className={`flex items-center justify-center w-full text-xl font-bold py-2 px-4 mb-2 ${
-								providersUI[provider.id].bg
-							} text-white rounded border-b-4 border-${hoverBgClass(
-								providersUI[provider.id].bg,
-								2
-							).substring(3)} transition-colors hover:${hoverBgClass(
-								providersUI[provider.id].bg
-							)} focus:border-transparent focus:outline-none focus:ring focus:ring-${hoverBgClass(
-								providersUI[provider.id].bg,
-								-3
-							).substring(3)}`}
+							className={
+								'flex items-center justify-center w-full text-xl font-bold py-2 px-4 mb-2 text-white rounded border-b-4 transition-colors focus:border-transparent focus:outline-none focus:ring focus:ring--3} ' +
+								provider.id
+							}
 							onClick={() => {
 								setLoading(provider.id);
 								signIn(provider.id);

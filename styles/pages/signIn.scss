@@ -1,0 +1,38 @@
+button.google {
+	--tw-border-opacity: 1;
+	background-color: rgba(220, 38, 38, var(--tw-bg-opacity));
+	border-color: rgba(153, 27, 27, var(--tw-border-opacity));
+	--tw-ring-opacity: 1;
+	--tw-ring-color: rgba(252, 165, 165, var(--tw-ring-opacity));
+}
+
+button.google:hover {
+	--tw-border-opacity: 1;
+	background-color: rgba(185, 28, 28, var(--tw-bg-opacity));
+}
+
+button.github {
+	--tw-border-opacity: 1;
+	background-color: rgba(37, 99, 235, var(--tw-bg-opacity));
+	border-color: rgba(30, 64, 175, var(--tw-border-opacity));
+	--tw-ring-opacity: 1;
+	--tw-ring-color: rgba(147, 197, 253, var(--tw-ring-opacity));
+}
+
+button.github:hover {
+	--tw-border-opacity: 1;
+	background-color: rgba(29, 78, 216, var(--tw-bg-opacity));
+}
+
+button.discord {
+	--tw-border-opacity: 1;
+	background-color: rgba(124, 58, 237, var(--tw-bg-opacity));
+	border-color: rgba(91, 33, 182, var(--tw-border-opacity));
+	--tw-ring-opacity: 1;
+	--tw-ring-color: rgba(196, 181, 253, var(--tw-ring-opacity));
+}
+
+button.discord:hover {
+	--tw-border-opacity: 1;
+	background-color: rgba(109, 40, 217, var(--tw-bg-opacity));
+}
