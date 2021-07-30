@@ -2,7 +2,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import logo from '/public/logo.svg';
 import abstractUser from '/public/abstract-user.svg';
-import { useRouter } from 'next/router';
+import Router, { useRouter } from 'next/router';
 import { signOut, useSession } from 'next-auth/client';
 import Dropdown from './Dropdown';
 import NavPages from './NavPages';
@@ -12,6 +12,10 @@ const Nav = ({ ...props }) => {
 	const router = useRouter();
 	const [isShowing, setIsShowing] = useState(false);
 	const [session] = useSession();
+
+	Router.events.on('routeChangeComplete', () => {
+		setIsShowing(false);
+	});
 
 	return (
 		<header>
