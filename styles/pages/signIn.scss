@@ -6,22 +6,12 @@ button.google {
 	--tw-ring-color: rgba(252, 165, 165, var(--tw-ring-opacity));
 }
 
-button.google:hover {
-	--tw-border-opacity: 1;
-	background-color: rgba(185, 28, 28, var(--tw-bg-opacity));
-}
-
 button.github {
 	--tw-border-opacity: 1;
 	background-color: rgba(37, 99, 235, var(--tw-bg-opacity));
 	border-color: rgba(30, 64, 175, var(--tw-border-opacity));
 	--tw-ring-opacity: 1;
 	--tw-ring-color: rgba(147, 197, 253, var(--tw-ring-opacity));
-}
-
-button.github:hover {
-	--tw-border-opacity: 1;
-	background-color: rgba(29, 78, 216, var(--tw-bg-opacity));
 }
 
 button.discord {
@@ -32,7 +22,19 @@ button.discord {
 	--tw-ring-color: rgba(196, 181, 253, var(--tw-ring-opacity));
 }
 
-button.discord:hover {
-	--tw-border-opacity: 1;
-	background-color: rgba(109, 40, 217, var(--tw-bg-opacity));
+@media (min-width: 640px) {
+	button.google:hover {
+		--tw-border-opacity: 1;
+		background-color: rgba(185, 28, 28, var(--tw-bg-opacity));
+	}
+
+	button.github:hover {
+		--tw-border-opacity: 1;
+		background-color: rgba(29, 78, 216, var(--tw-bg-opacity));
+	}
+
+	button.discord:hover {
+		--tw-border-opacity: 1;
+		background-color: rgba(109, 40, 217, var(--tw-bg-opacity));
+	}
 }
