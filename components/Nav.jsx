@@ -25,6 +25,7 @@ const Nav = ({ ...props }) => {
 								type='button'
 								className='inline-flex items-center justify-center p-2 rounded-md text-gray-400 sm:hover:text-white hover:bg-gray-700 focus:outline-none'
 								onClick={() => setIsShowing(!isShowing)}
+								style={{ WebkitTapHighlightColor: 'transparent' }}
 							>
 								<svg
 									className='block h-6 w-6'
