@@ -2,7 +2,7 @@ import { Provider } from 'next-auth/client';
 import NextNprogress from 'nextjs-progressbar';
 import 'tailwindcss/tailwind.css';
 import Nav from '../components/Nav';
-import '../components/styles/Nav.scss';
+import '../components/styles/Nav.css';
 
 function MyApp({ Component, pageProps }) {
 	return (
