@@ -10,7 +10,9 @@ module.exports = {
 		extend: {},
 	},
 	variants: {
+		scrollbar: ['rounded'],
+		scrollSnapType: ['responsive'],
 		extend: {},
 	},
-	plugins: [],
+	plugins: [require('tailwind-scrollbar'), require('tailwindcss-scroll-snap')],
 };
