@@ -29,7 +29,9 @@ const Nav = ({ ...props }) => {
 						<div className='flex items-center sm:hidden'>
 							<button
 								type='button'
-								className='inline-flex items-center justify-center p-2 rounded-md text-gray-400 sm:hover:text-white hover:bg-gray-700 focus:outline-none'
+								className={`inline-flex items-center justify-center p-2 rounded-md text-gray-400 transition-colors sm:hover:text-white${
+									isShowing ? ' bg-gray-700' : ''
+								} focus:outline-none`}
 								onClick={() => setIsShowing(!isShowing)}
 								style={{ WebkitTapHighlightColor: 'transparent' }}
 							>
@@ -89,38 +91,44 @@ const Nav = ({ ...props }) => {
 								</a>
 							</Link>
 						)}
-						<Dropdown
-							groups={[
-								[
-									<Link href='Profile'>
-										<a>Your profile</a>
-									</Link>,
-									<Link href='Settings'>
-										<a>Settings</a>
-									</Link>,
-								],
-								[<div onClick={signOut}>Sign out</div>],
-							]}
-							bgClass='bg-gray-700'
-						>
-							<div className='flex items-center ml-auto'>
-								<div className='hidden font-semibold mr-2 sm:block'>
-									{session
-										? 'Hello, ' + session?.user?.name
-										: router.pathname !== '/auth/signIn' && <div> to Start Messaging</div>}
+						<div className='flex items-center justify-center h-9'>
+							<Dropdown
+								groups={[
+									[
+										<Link href='Profile'>
+											<a>Your profile</a>
+										</Link>,
+										<Link href='Settings'>
+											<a>Settings</a>
+										</Link>,
+									],
+									[<div onClick={signOut}>Sign out</div>],
+								]}
+								bgClass='bg-gray-700'
+								allClass=''
+							>
+								<div className='flex items-center ml-auto'>
+									<div className='sm:font-semibold sm:mr-2'>
+										<div className='hidden sm:block'>
+											{session
+												? 'Hello, ' + session?.user?.name
+												: router.pathname !== '/auth/signIn' && <div> to Start Messaging</div>}
+										</div>
+										<div className='block sm:hidden'></div>
+									</div>
+									{session?.user?.image ? (
+										<img className='w-9 h-9 rounded-full' src={session?.user?.image} />
+									) : (
+										<Image
+											className='rounded-full focus:outline-none'
+											width={36}
+											height={36}
+											src={abstractUser}
+										/>
+									)}
 								</div>
-								{session?.user?.image ? (
-									<img className='w-9 h-9 rounded-full' src={session?.user?.image} />
-								) : (
-									<Image
-										className='rounded-full focus:outline-none'
-										width={36}
-										height={36}
-										src={abstractUser}
-									/>
-								)}
-							</div>
-						</Dropdown>
+							</Dropdown>
+						</div>
 					</div>
 				</div>
 			</nav>
