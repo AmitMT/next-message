@@ -17,9 +17,13 @@ function MyApp({ Component, pageProps }) {
 			/>
 
 			<Provider session={pageProps.session}>
-				<div className='flex flex-col min-h-screen'>
-					<Nav />
-					<Component {...pageProps} />
+				<div className='flex flex-col h-screen'>
+					<header className='w-screen'>
+						<Nav />
+					</header>
+					<main className='flex-1 h-96 overflow-x-hidden'>
+						<Component {...pageProps} />
+					</main>
 				</div>
 			</Provider>
 		</>

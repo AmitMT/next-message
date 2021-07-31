@@ -19,13 +19,13 @@ const NavPages = ({
 					Home
 				</a>
 			</Link>
-			<Link href='/DirectMessages'>
+			<Link href='/chat'>
 				<a
 					className={`${classes} ${
-						router.pathname === '/DirectMessages' ? activeClasses : inactiveClasses
+						router.pathname === '/chat' ? activeClasses : inactiveClasses
 					} focus:${activeClasses.split(' ').join(' focus:')}`}
 				>
-					DirectMessages
+					Chat
 				</a>
 			</Link>
 			<Link href='/Groups'>

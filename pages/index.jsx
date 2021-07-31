@@ -11,7 +11,8 @@ export default function Home() {
 				<title>Next Message</title>
 				<meta name='description' content='Home' />
 			</Head>
-			<div className='flex-1 flex items-center'>
+
+			<div className='flex h-full items-center'>
 				<div className='flex items-center max-w-full text-center mx-5 sm:text-left lg:mx-auto lg:max-w-3xl '>
 					<div className='flex flex-col'>
 						<div className='text-5xl font-bold'>
@@ -21,7 +22,7 @@ export default function Home() {
 							A web application made with <b>next.js</b> for messaging people all around the world.
 						</div>
 						<div className='mx-auto'>
-							<Link href='/DirectMessages'>
+							<Link href='/chat'>
 								<a className='block bg-indigo-600 border-b-4 border-indigo-900 transition hover:bg-indigo-700 text-white font-semibold mt-10 mb-5 py-2 px-4 rounded-lg focus:outline-none focus:ring-4 focus:border-transparent'>
 									Send a Message
 								</a>

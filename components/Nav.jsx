@@ -20,8 +20,8 @@ const Nav = ({ ...props }) => {
 	}, []);
 
 	return (
-		<header>
-			<nav className='sticky shadow-lg top-0 z-50 bg-gray-800 text-white' {...props}>
+		<header className='relative z-50'>
+			<nav className='bg-gray-800 shadow-lg text-white' {...props}>
 				{/* Navbar width */}
 				<div className='max-w-7xl mx-auto px-2 sm:px-6 lg:px-8'>
 					<div className='relative flex items-center justify-between h-16'>
@@ -133,7 +133,7 @@ const Nav = ({ ...props }) => {
 				</div>
 			</nav>
 			<div
-				className={`fixed w-full flex items-center justify-center h-16 ${
+				className={`absolute w-full flex items-center justify-center h-16 ${
 					isShowing ? 'nav-pages-out' : 'nav-pages-in'
 				} left-0 bg-gray-800 rounded-b shadow sm:hidden nav-pages-transition`}
 			>
