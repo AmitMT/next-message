@@ -49,10 +49,10 @@ const MessagingList = ({ ...props }) => {
 			</div>
 			<ul className='m-2 mx-0 pr-2 divide-y divide-gray-300 overflow-y-scroll scrollbar-thin scrollbar-thumb-gray-400 snap snap-y'>
 				{people.map((person, i) => (
-					<li className='' key={i}>
+					<li className='snap-start' key={i}>
 						<div
 							className={`p-4 overflow-hidden select-none cursor-pointer transition-colors ${
-								currentChat?.id == person.id ? 'bg-indigo-300' : 'sm:hover:bg-gray-200'
+								currentChat?.id == person.id ? 'bg-indigo-300' : 'sm:hover:bg-gray-100'
 							}`}
 							onClick={() => {
 								setCurrentChat(person);
