@@ -1,6 +1,12 @@
 import { getSession } from 'next-auth/client';
 
-export const setProtectedView = async ({ req, res, resolvedUrl }) => {
+export const setProtectedView = async (
+	context,
+	callback = async () => {
+		return {};
+	}
+) => {
+	const { req, res, resolvedUrl } = context;
 	const session = await getSession({ req });
 	if (!session && res) {
 		res.statusCode = 302;
@@ -8,7 +14,7 @@ export const setProtectedView = async ({ req, res, resolvedUrl }) => {
 		return { props: { session: null } };
 	}
 
-	return { props: { session: session } };
+	return { props: { session, ...(await callback(context, session)) } };
 };
 
 export const useSessionView = async ({ req, res, resolvedUrl }) => {
@@ -17,5 +23,5 @@ export const useSessionView = async ({ req, res, resolvedUrl }) => {
 		return { props: { session: null } };
 	}
 
-	return { props: { session: session } };
+	return { props: { session } };
 };

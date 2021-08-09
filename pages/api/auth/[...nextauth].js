@@ -19,6 +19,12 @@ export default NextAuth({
 			clientSecret: process.env.DISCORD_CLIENT_SECRET,
 		}),
 	],
+	callbacks: {
+		session: async (session, user) => {
+			session.user.id = user.id;
+			return Promise.resolve(session);
+		},
+	},
 
 	pages: {
 		signIn: '/auth/signIn',
