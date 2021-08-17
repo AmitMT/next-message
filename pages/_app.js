@@ -5,11 +5,6 @@ import Nav from '../components/Nav';
 import '../styles/global.scss';
 
 function MyApp({ Component, pageProps }) {
-	// const socket = io('http://localhost:5000');
-	// socket.on('hi', (data) => {
-	// 	console.log(data);
-	// });
-
 	return (
 		<>
 			<NextNprogress

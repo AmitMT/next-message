@@ -12,7 +12,7 @@ const Chat = ({ session, chatsError, ...props }) => {
 	const [currentMessages, setCurrentMessages] = useState(null);
 	const [loadingMessages, setLoadingMessages] = useState(false);
 	const [showChats, setShowChats] = useState(true);
-	const [socket] = useState(io(process.env.SERVER_ORIGIN_URL));
+	const [socket] = useState(io(process.env.NEXT_PUBLIC_SERVER_ORIGIN_URL));
 
 	useEffect(() => {
 		socket.emit('userID', session.user.id);
@@ -30,6 +30,7 @@ const Chat = ({ session, chatsError, ...props }) => {
 	}, []);
 
 	useEffect(() => {
+		console.log(process.env);
 		if (currentChatID) {
 			socket.emit('changeCurrentChat', currentChatID);
 			setLoadingMessages(true);
