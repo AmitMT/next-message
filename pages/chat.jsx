@@ -64,7 +64,7 @@ const Chat = ({ session, chatsError, ...props }) => {
 						</div>
 					)}
 				</div>
-				<div className='relative sm:hidden chat-main w-full bg-white'>
+				<div className='relative sm:hidden chat-main w-full h-full bg-white'>
 					{chats ? (
 						<>
 							<div
@@ -77,9 +77,7 @@ const Chat = ({ session, chatsError, ...props }) => {
 								/>
 							</div>
 							<div className='absolute w-full h-full'>
-								<button className='w-80 h-52 bg-blue-200' onClick={() => setShowChats(true)}>
-									&lt;
-								</button>
+								<Messages {...{ session, currentMessages, loadingMessages }} />
 							</div>
 						</>
 					) : (
