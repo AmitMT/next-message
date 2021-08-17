@@ -12,7 +12,11 @@ module.exports = {
 	variants: {
 		scrollbar: ['rounded'],
 		scrollSnapType: ['responsive'],
-		extend: {},
+		extend: { textColor: ['selection', 'important'], backgroundColor: ['selection'] },
 	},
-	plugins: [require('tailwind-scrollbar'), require('tailwindcss-scroll-snap')],
+	plugins: [
+		require('tailwind-scrollbar'),
+		require('tailwindcss-scroll-snap'),
+		require('tailwindcss-important'),
+	],
 };

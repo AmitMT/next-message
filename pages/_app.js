@@ -26,7 +26,10 @@ function MyApp({ Component, pageProps }) {
 					<header className='w-screen'>
 						<Nav />
 					</header>
-					<main className='flex-1 h-96 overflow-x-hidden'>
+					<main
+						className='flex-1 h-96 overflow-x-hidden'
+						style={{ WebkitTapHighlightColor: 'transparent' }}
+					>
 						<Component {...pageProps} />
 					</main>
 				</div>

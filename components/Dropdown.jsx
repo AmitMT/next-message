@@ -12,7 +12,7 @@ const Dropdown = ({
 	const activeClass = `${colorClass} ${bgClass}`;
 
 	return (
-		<Menu as='div' className={'relative ' + allClass}>
+		<Menu as='div' className={'relative ' + allClass} {...props}>
 			<Menu.Button style={{ WebkitTapHighlightColor: 'transparent' }}>{children}</Menu.Button>
 			<Transition
 				as={Fragment}

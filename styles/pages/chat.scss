@@ -1,4 +1,25 @@
-.chat-main {
-	display: flex;
+.chat-all {
 	height: calc(100vh - 64px);
+}
+
+.chat-main {
+	max-width: 105rem;
+	max-height: 58rem;
+
+	@media (min-width: 110rem) and (min-height: 58rem) {
+		border-radius: 1rem;
+		overflow: hidden;
+	}
+}
+
+.MessagingListTransition {
+	transition: transform 0.4s ease-in-out !important;
+}
+
+.MessagingListShown {
+	transform: translate(0, 0);
+}
+
+.MessagingListHidden {
+	transform: translate(-100%, 0);
 }

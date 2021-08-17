@@ -77,8 +77,8 @@ const Nav = ({ ...props }) => {
 									</div>
 								</a>
 							</Link>
-							<div className='hidden sm:ml-6 sm:flex sm:items-center '>
-								<div className='flex space-x-4'>
+							<div className='hidden sm:ml-10 sm:flex sm:items-center '>
+								<div className='flex space-x-1 p-1 bg-gray-900 rounded-xl'>
 									<NavPages />
 								</div>
 							</div>
@@ -137,7 +137,7 @@ const Nav = ({ ...props }) => {
 					isShowing ? 'nav-pages-out' : 'nav-pages-in'
 				} left-0 bg-gray-800 rounded-b shadow sm:hidden nav-pages-transition`}
 			>
-				<div>
+				<div className='flex space-x-1 p-1 bg-gray-900 rounded-xl overflow-x-auto'>
 					<NavPages />
 				</div>
 			</div>
