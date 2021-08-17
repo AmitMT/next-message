@@ -30,7 +30,6 @@ const Chat = ({ session, chatsError, ...props }) => {
 	}, []);
 
 	useEffect(() => {
-		console.log(process.env);
 		if (currentChatID) {
 			socket.emit('changeCurrentChat', currentChatID);
 			setLoadingMessages(true);
