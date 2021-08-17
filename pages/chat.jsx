@@ -13,7 +13,7 @@ const Chat = ({ session, chatsError, ...props }) => {
 	const [loadingMessages, setLoadingMessages] = useState(false);
 	const [showChats, setShowChats] = useState(true);
 	const [socket] = useState(io(process.env.NEXT_PUBLIC_SERVER_ORIGIN_URL));
-
+	console.log(process.env.NEXT_PUBLIC_SERVER_ORIGIN_URL);
 	useEffect(() => {
 		socket.emit('userID', session.user.id);
 		socket.on('chatsData', (chatsData) => {
