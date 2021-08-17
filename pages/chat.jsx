@@ -2,6 +2,7 @@ import Head from 'next/head';
 import { io } from 'socket.io-client';
 import { useEffect, useState } from 'react';
 import ReactLoading from 'react-loading';
+import ChevronLeftIcon from '@heroicons/react/outline/ChevronLeftIcon';
 import { setProtectedView } from '../api-functions/signIn';
 import MessagingList from '../components/MessagingList';
 import Messages from '../components/Messages';
@@ -76,7 +77,29 @@ const Chat = ({ session, chatsError, ...props }) => {
 									{...{ session, chats, setShowChats, currentChatID, setCurrentChatID }}
 								/>
 							</div>
-							<div className='absolute w-full h-full'>
+							<div className='flex flex-col absolute w-full h-full'>
+								<div className='flex border-b-2 p-2'>
+									<div className='flex-1 flex items-center justify-center border-gray-200'>
+										<button
+											className='group h-full'
+											onClick={() => {
+												setShowChats(true);
+											}}
+										>
+											<ChevronLeftIcon className='h-full text-gray-400 p-2 rounded-xl transition-colors group-active:text-gray-700 group-active:bg-gray-100' />
+										</button>
+										<div className='flex-1 text-gray-500 p-2 font-semibold text-lg'>
+											{chats.find((n) => n.id == currentChatID)?.name ||
+												chats
+													.find((n) => n.id == currentChatID)
+													?.members.map((member) =>
+														member.name === session.user.name ? 'You' : member.name
+													)
+													.sort()
+													.join(', ')}
+										</div>
+									</div>
+								</div>
 								<Messages {...{ session, currentMessages, loadingMessages }} />
 							</div>
 						</>
