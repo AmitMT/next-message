@@ -12,7 +12,7 @@ const Chat = ({ session, chatsError, ...props }) => {
 	const [currentMessages, setCurrentMessages] = useState(null);
 	const [loadingMessages, setLoadingMessages] = useState(false);
 	const [showChats, setShowChats] = useState(true);
-	const [socket] = useState(io('http://localhost:5000'));
+	const [socket] = useState(io(process.env.SERVER_ORIGIN_URL || 'http://localhost:3000'));
 
 	useEffect(() => {
 		socket.emit('userID', session.user.id);
