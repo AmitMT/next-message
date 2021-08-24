@@ -14,7 +14,7 @@ const Chat = ({ session, chatsError, ...props }) => {
 	const [loadingMessages, setLoadingMessages] = useState(false);
 	const [showChats, setShowChats] = useState(true);
 	const [socket] = useState(io(process.env.NEXT_PUBLIC_SERVER_ORIGIN_URL));
-	console.log(process.env.NEXT_PUBLIC_SERVER_ORIGIN_URL);
+
 	useEffect(() => {
 		socket.emit('userID', session.user.id);
 		socket.on('chatsData', (chatsData) => {
@@ -45,7 +45,7 @@ const Chat = ({ session, chatsError, ...props }) => {
 			</Head>
 
 			<div className='flex items-center chat-all justify-center bg-gray-50' {...props}>
-				<div className='hidden sm:flex chat-main w-full h-full shadow-xl bg-white'>
+				<div className='hidden sm:flex chat-main shadow-xl bg-white'>
 					{chats ? (
 						<>
 							<div className='flex-1 min-w-0 sm:max-w-xl sm:border-r-2 sm:border-gray-200'>

@@ -3,10 +3,14 @@
 }
 
 .chat-main {
-	max-width: 105rem;
-	max-height: 58rem;
+	width: 100%;
+	height: 100%;
+	max-width: 100rem;
+	max-height: 50rem;
 
-	@media (min-width: 110rem) and (min-height: 58rem) {
+	@media (min-width: 100rem) and (min-height: 50rem) {
+		width: calc(100% - 5rem);
+		height: calc(100% - 5rem);
 		border-radius: 1rem;
 		overflow: hidden;
 	}

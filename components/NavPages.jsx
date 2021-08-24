@@ -13,7 +13,10 @@ const NavPages = ({
 			<Link href='/'>
 				<a
 					className={`${classes} ${
-						router.pathname === '/' ? activeClasses : inactiveClasses
+						router.pathname === '/' ||
+						new URL(router.query.callbackUrl, 'http://localhost:3000').pathname == '/'
+							? activeClasses
+							: inactiveClasses
 					} focus:${activeClasses.split(' ').join(' focus:')}`}
 					style={{ WebkitTapHighlightColor: 'transparent' }}
 				>
@@ -23,7 +26,10 @@ const NavPages = ({
 			<Link href='/chat'>
 				<a
 					className={`${classes} ${
-						router.pathname === '/chat' ? activeClasses : inactiveClasses
+						router.pathname === '/chat' ||
+						new URL(router.query.callbackUrl, 'http://localhost:3000').pathname == '/chat'
+							? activeClasses
+							: inactiveClasses
 					} focus:${activeClasses.split(' ').join(' focus:')}`}
 					style={{ WebkitTapHighlightColor: 'transparent' }}
 				>
@@ -33,7 +39,10 @@ const NavPages = ({
 			<Link href='/Groups'>
 				<a
 					className={`${classes} ${
-						router.pathname === '/Groups' ? activeClasses : inactiveClasses
+						router.pathname === '/Groups' ||
+						new URL(router.query.callbackUrl, 'http://localhost:3000').pathname == '/Groups'
+							? activeClasses
+							: inactiveClasses
 					} focus:${activeClasses.split(' ').join(' focus:')}`}
 					style={{ WebkitTapHighlightColor: 'transparent' }}
 				>
